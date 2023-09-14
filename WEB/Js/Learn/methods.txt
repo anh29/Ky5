@@ -1,0 +1,91 @@
+- String : " "
+    + String.trim() : bỏ cách khoảng cách
+
+- Function:
+    + console.log(): in một giá trị ra màn hình console.
+    + alert(): hiển thị một hộp thoại thông báo.
+    + prompt(): yêu cầu người dùng nhập vào một giá trị.
+    + parseInt(): chuyển một chuỗi thành số nguyên.
+    + parseFloat(): chuyển một chuỗi thành số thực.
+    + isNaN(): kiểm tra xem một giá trị có phải là số hay không.
+    + Math.round(): làm tròn một số thực.
+    + Math.ceil(): làm tròn lên một số thực.
+    + Math.floor(): làm tròn xuống một số thực.
+    + String.toUpperCase(): chuyển một chuỗi thành chữ hoa.
+    + String.toLowerCase(): chuyển một chuỗi thành chữ thường.
+    + Array.sort(): sắp xếp các phần tử trong một mảng.
+
+- Array : []
+    Array.push(...): thêm một hoặc nhiều phần tử vào cuối mảng.
+    Array.pop(): loại bỏ phần tử cuối cùng của mảng.
+    Array.shift(): loại bỏ phần tử đầu tiên của mảng.
+    Array.unshift(...): thêm một hoặc nhiều phần tử vào đầu mảng.
+    Array.indexOf(): tìm vị trí của một phần tử trong mảng.
+    Array.slice(): cắt một đoạn mảng từ mảng gốc.
+    Array.splice(): thêm, xoá hoặc thay thế các phần tử trong mảng.
+    Array.forEach(): duyệt qua từng phần tử trong mảng và thực hiện một hành động cho mỗi phần tử.
+    Array.map(): tạo một mảng mới bằng cách thực hiện một hành động cho mỗi phần tử trong mảng.
+    Array.filter(): tạo một mảng mới bằng cách lọc các phần tử trong mảng theo một điều kiện nhất định
+    Array.some(): ktra có p.tử thỏa mãn điều kiện ko.
+    Array.every(): ktra tất cả p.tử thỏa mãn điều kiện ko.
+    Array.includes() : ktra xem một giá trị cụ thể có tồn tại trong mảng hay không
+    Array.reduce(
+        //xử lý từng phần tử trong mảng và trả về kết quả cuối cùng.
+        function(previousValue, currentValue, currentIndex, array) {
+            // return result from previousValue and currentValue
+        }, initialValue
+    );
+        Nếu initialValue được cung cấp, giá trị đầu tiên của biến accumulator sẽ là initialValue, nếu không, giá trị đầu tiên của biến accumulator sẽ là phần tử đầu tiên của mảng.
+        Thực hiện hàm callback trên từng phần tử của mảng, lưu giữ giá trị tích luỹ vào biến accumulator.
+        Trả về giá trị cuối cùng của biến accumulator.
+
+- Object : {key : value}
+    + Array.from(Object): convert to array
+    + Object.keys(): trả về một mảng các key của một Object.
+    + Object.values(): trả về một mảng các giá trị của một Object.
+    + Object.entries(): trả về một mảng các cặp key-value của một Object.
+    + Object.assign(): gán nhiều đối tượng vào một đối tượng mới.
+    + Object.freeze(): khóa một đối tượng, không thể thay đổi hoặc sửa đổi nó.
+    + Object.defineProperty(): allows you to define new properties or modify existing properties of an object. 
+    + JSON.stringify(): chuyển đổi một đối tượng sang một chuỗi JSON.
+    + JSON.parse(): chuyển đổi một chuỗi JSON sang một đối tượng JavaScript.
+
+- DOM
+    + Các phương thức truy cập và thay đổi các đối tượng trong DOM bao gồm: (document.)
+        getElementById: Lấy một phần tử dựa trên ID của nó
+        querySelector: Lấy một phần tử dựa trên selector CSS
+        getElementsByTagName: Lấy tất cả các phần tử với tên tag cho trước
+        getElementsByClassName: Lấy tất cả các phần tử với tên lớp cho trước
+        querySelectorAll: Lấy tất cả các phần tử phù hợp với selector CSS cho trước
+        parentElement: Lấy thẻ cha
+
+
+        innerHTML: Thay đổi nội dung HTML của một phần tử
+        innerText: Thay đổi nội dung text (bỏ qua space, ko chèn HTML tags)
+        textContent: Thay đổi nội dung văn bản của một phần tử
+        setAttribute: Thay đổi một thuộc tính của một phần tử
+        removeAttribute: Xóa một thuộc tính của một phần tử
+        classList: Thêm, xóa hoặc kiểm tra tồn tại của một lớp cho một phần tử.
+ 
+    + Các thuộc tính và phương thức chính của classList bao gồm:
+        length: Trả về số lượng lớp CSS đang được gán cho phần tử.
+        add(className): Thêm một lớp CSS mới cho phần tử.
+        remove(className): Xóa một lớp CSS đang có sẵn cho phần tử.
+        toggle(className): Thêm lớp CSS nếu nó chưa có, hoặc xóa nếu nó đang có sẵn.
+        contains(className): Trả về true nếu phần tử có chứa lớp CSS được chỉ định, hoặc false nếu không.
+
+- JSON
+    JSON.parse(): parse một chuỗi JSON (từ json -> js)
+    JSON.stringify(): tạo một chuỗi JSON. (từ js -> json)
+
+- Promise 
+    +(sync, async)
+        setTimeout, setInterval, fetch, XMLHttpRequest, file reading, request animation frame -> hàm gây ra bất đồng bộ
+
+    + Promise.resolve(`g.trị trả về`) -> trả về promise luôn thành công
+    + Promise.reject(`g.trị trả về`) -> trả về promise luôn thất bại
+    + Promise.all([array1, array2,...]) -> các array là promise => trả về 1 promise
+
+- Fetch
+    + .json() sẽ chuyển nội dung của Response -> JavaScript (nếu nội dung là một chuỗi JSON hợp lệ), trả về Promise
+    + .text() sẽ trả về nội dung của Response -> chuỗi plain text.

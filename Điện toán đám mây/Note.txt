@@ -1,0 +1,16 @@
+	LOCAL AREA NETWORK (LAN)
+A_private : 10.0.0.0/U (U>=8)
+B_private : 172.16.0.0/U (U>=12)
+C_private : 192.168.0.0/U (U>=16)
+E.g: 10.0.0.1/24
+     10.0.0.2/24
+|<-(PAT)-> 6.9.6.9/24
+
+*Public IPs (Internet) : x.y.z.t/U - A_private - B_private - C_private   E.g: 6.9.6.9/24
+PRIVATE <---(NAT)---> PUBLIC  // NETWORK ADDRESS TRANSLATION
+N PRIVATE IPs <---(PAT)---> 1 public IP // PORT ADDRESS TRANSLATION
+10.0.0.1: PORT1 <--> 6.9.6.9 : PORT1 <---> 6.9.6.10 : 80 // (WEB) HTTP <-- TCP: 80
+10.0.0.2: PORT2 <-(PAT)-> 6.9.6.9 : PORT2 <-(TCP)-> 6.9.6.11 : 443 // HTTPS <-- TCP: 443
+
+PORT1 ... PORT N thuoc [1024...65535] USER APPS
+COMMON PROTOCOLS thuoc [0...1023]

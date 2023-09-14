@@ -1,0 +1,31 @@
+- Sử dụng hàm list() hoặc []
+
+- Chứa đc bất kỳ dữ liệu nào.
+
+- Lấy p.tử con:
+ listname[start_index : end_index : step] // Giữ đầu bỏ đuôi
+
+- Thêm p.tử:
+ append(value) // thêm 1 p.tử vào cuối danh sách
+ extend(value) // thêm 1 tập p.tử vào cuối danh sách
+ object.insert(position,value)
+ 
+- Xóa:
+ remove(item)	Loại bỏ 1 phần tử có giá trị nào đó tại vị trí lần đầu tiên nó xuất hiện.
+ pop(index)	Loại bỏ và trả về giá trị của phần tử tại vị trí index trong danh sách.
+ clear()	Loại bỏ toàn bộ phần tử khỏi danh sách. Đầu ra sẽ là danh sách rỗng.
+ del list_name	Xóa toàn bộ danh sách.
+
+in / not in -> k.tra p.tử con, return boolean
+index(value) -> tìm index của value đầu tiên xuất hiện trong list
+list.sort(key=..., reverse=...) // reverse = True -> sx giảm dần
+max(list) / min(list) / sum(list)
+count(value) -> đếm số lần xuất hiện trong lits
+
+- Sao chép ds:
+ Toán tử gán '=' (deep copying) 
+	-> gán 2 biến với tham chiếu đến cùng 1 đối tượng ds
+	-> sau khi gán, sửa đổi một trong 2 biến đó, đối tượng sẽ được thay đổi. 
+ copy() -> sao chép dữ liệu từ list sang
+
+- any() / all() -> k.tra dữ liệu trong list, return boolean

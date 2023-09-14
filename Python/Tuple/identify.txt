@@ -1,0 +1,25 @@
+- Tính chất:
+ + Có thứ tự: p.tử đc đánh số từ index 0
+ + Ko thay đổi đc: ko thể thay đổi hoặc xóa p.tử khỏi Tuple
+ + Hỗn tạp: chúa đc nhiều kiểu dữ liệu
+ + Cho phép trùng lặp
+
+- Tạo dữ liệu Tuple:
+ + Sử dụng ()
+
+- TH Thay đổi dữ liệu:
+ + P.tử là kiểu có thể thay đổi được như List
+ + Mún thay đổi tuple : ép tuple->list (dùng list()) cuối cung ép lại tuple (dùng tuple())
+
+ + Xóa: dùng từ khóa 'del' xóa toàn bộ Tuple
+
+- Tìm kiếm p.tử:
+ + index(item,[start,end]) -> trả về index tương ứng đầu tiên
+
+- K.tra tồn tại p.tử ko:
+ + Dùng toán tử in / not in -> return true/false
+
+count() : đếm số lần xuất hiện
+min()/max() : tìm min, max // Tuple chứa các dữ liệu cùng kiểu
+
+all()/any() -> return true/false (trong Tuple có kiểu )

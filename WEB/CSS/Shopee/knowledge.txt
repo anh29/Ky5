@@ -1,0 +1,81 @@
+// struct folder
+- base.css : các tp chung
+- main.css : các tp riêng
+
+//
+- mỗi thẻ trong html đều có mặc định khác nhau (về margin,...) 
+    => cần reset css 
+
+//
+- display: block -> giúp đặt chiều ngang/dọc trong css, kế thừa lại cha. ( cha lớn nhất là html)
+- display: list-item -> (cũng na ná block.) Ko nằm cùng 1 hàng, kế thừa lại.
+
+// làm website
+- 1 thẻ chứa toàn bộ web
+- Làm từng phần của web (trên xuống -> ngoài vào)
+    + header
+    + container
+    + footer
+- header:
+    + navbar + left + right
+    + search : logo + search + giỏ hàng 
+
+//
+- khi header_qr có margin -> giữa text và qr có khoảng trống
+    => ngay khi vừa thoát ra thẻ chứa text thì ko tới thẻ chứa header_qr được
+    => header_qr ko nhận được css -> header_qr bị mất ngay lúc đó
+    ==> dùng lớp giả làm cầu nối cho 2 thẻ (::before)
+
+//
+- text heading -> đưa vào thẻ <h.>
+- h1 -> từ khóa chính của website
+- h2 -> từ khóa phụ của website
+
+//
+- thẻ cha : display: block
+- thẻ con : căn giữa
+ => thẻ con thêm padding thì sẽ cha sẽ ko tự thay đổi kích thước theo thẻ con
+ => phần padding thêm vào thẻ con bị thừa ra và ko lọt vào height của thẻ cha
+    ===> Giải quyết: 
+    C1:
+        - Thẻ cha: display: flex
+        - Thẻ con: margin: auto // để căn giữa khi dùng flex
+        => thẻ cha sẽ tăng thêm height khi con có padding
+    C2:
+        - Thẻ con:
+            width: 100% // width của thẻ con chiếm bằng thẻ cha
+            thêm padding
+            text-align: center
+            display: block 
+    
+//
+- các thuộc tính ko đc trình duyêt (ggChrome//...) nhận
+    => vd: gg chrome -> -webkit-user-select: ;
+       vd: animation ko phải trình duyệt nào cx support 
+            -> (đối với microSoft) -ms-animation: ...
+            -> (đối với operaMini) -o-animation: ...
+    -> Để kiểm tra: caniuse.com
+
+//modal
+- giao diện bật lên 1 ô + (lớp phủ bên ngoài nhìn xuyên đc) ->là modal
+- phân tích:
+    + lớp phủ
+    + khung của content nằm ở giữa
+    + phân tích tiếp phần riêng để làm từng modal thích hợp
+    
+//
+- các thẻ input, button, checkbox ... có outline 
+- ex: khi click vào thẻ input thì hiện màu xanh xung quanh -> gọi là outline
+- ỨD outline: web dành cho người khiếm thị,..
+
+* Background là img thì cần css kiểu inline -> để backend thuận tiện xử lý
+
+* Khi sử dụng padding ở background-img -> padding-top tương đối với chính thẻ chứa nó
+  -> background-img giúp chỉnh sửa kích cỡ ảnh hiện thị khi ảnh quá to hay quá nhỏ
+
+//
+margin/padding :
+    a b c d => top         right       bottom  left
+    a b c   => top         right-left  bottom
+    a b     => top-bottom  right-left
+    a       => top-right-bottom-left

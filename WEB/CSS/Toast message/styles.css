@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family:'Times New Roman', Times, serif;
+    background-color: #f4f4f5;
+}
+
+body > div {
+    margin: auto;
+}
+
+/* Block */
+.btn {
+    display: inline-block; /*loai bo xuong dong cua the div */
+    text-decoration: none; /*loai bo gach chan cua the a */
+    background-color: transparent; /*loai bo mau cua the button */
+    border: none; /*loai bo vien cua the button */
+    outline: none; /*loai bo outline cua the button */
+    color: #fff;
+    min-width: 120px;
+
+    padding: 12px 32px;
+    border-radius: 50px;
+
+    cursor: pointer;
+    transition: opacity .2s linear;
+}
+
+.btn--size--s {
+    padding: 4px 20px;
+}
+
+.btn--size--l {
+    padding: 20px 48px;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+.btn + .btn { /* css cho btn sau btn (tru btn dau tien ko dc css)*/
+    margin-left: 16px;
+}
+
+.btn--success {
+    background-color: #71be34;
+}
+
+.btn--warning {
+    background-color: #ffb703;
+}
+
+.btn--info {
+    background-color: #2f86eb;
+}
+.btn--error {
+    background-color: #ff623d;
+}
+
+.btn--disabled {
+    opacity: 0.5 !important;
+    cursor: default;
+}
+
+/* Toast message */
+#toast {
+    position: fixed;
+    top: 32px;
+    right: 32px;
+    z-index: 9999; /* tranh chong len cac elements khac*/
+}
+
+.toast {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 5px;
+    border-left: 4px solid;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.08);
+    padding: 15px 0;
+    min-width: 400px;
+    max-width: 450px;
+    transition: all linear .3s;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(calc(100% + 32px));
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+.toast--success {
+    border-color: #47d864;
+}
+
+.toast--success .toast__icon {
+    color: #47d864;
+}
+
+.toast--info {
+    border-color: #2f86eb;
+}
+
+.toast--info .toast__icon {
+    color: #2f86eb;
+}
+
+.toast--warning {
+    border-color: #ffc021;
+}
+
+.toast--warning .toast__icon {
+    color: #ffc021;
+}
+
+.toast--error {
+    border-color: #f00;
+}
+
+.toast--error .toast__icon {
+    color: #f00;
+}
+
+.toast + .toast {
+    margin-top: 20px;
+}
+
+.toast__icon,
+.toast__close {
+    padding: 0 20px;
+    font-size: 30px;
+}
+
+.toast__body {
+    flex-grow: 1;
+}
+
+.toast__title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.toast__msg {
+    font-size: 14px;
+    color: #888;
+    margin-top: 4px;
+}
+
+.toast__close {
+    color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}

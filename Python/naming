@@ -1,0 +1,19 @@
+1. Đặt tên cho các module/package
+   ├── random_package
+   ├── **init**.py
+   ├── random_number.py
+   ├── random_string.py
+
+2. Đặt tên cho các biến, function
+
+- functions, variables được đặt tên ở định dạng chữ viết thường, nếu có nhiều từ, sẽ nối với nhau bởi ký tự underscore '\_'
+  ex: lower_case_with_underscore
+- Biến dữ liệu được đặt là constants value (các dữ liệu không thay đổi), thường được viết hoa toàn bộ các ký tự và có dấu \_ nối giữa các từ
+  ex: SECONDS_IN_HOUR = 3600
+
+3. Đặt tên cho class và attribute/function trong class:
+
+- class : CamelCase
+- attribute/function của một lớp được khai báo là public, quy tắc đặt tên như đặt tên biến
+- protected : \_
+- private : \_\_

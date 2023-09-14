@@ -1,0 +1,191 @@
+- Trong JavaScript, có 6 kiểu biến nguyên thủy (primitive data types)
+    String: là một chuỗi ký tự, được bao quanh bởi dấu nháy kép hoặc nháy đơn. Ví dụ: "hello" hoặc 'world'
+    Number: là một số, có thể là số nguyên hoặc số thực. Ví dụ: 3 hoặc 3.14
+    Boolean: có hai giá trị cụ thể là true hoặc false
+    Undefined: giá trị mặc định của một biến chưa được gán
+    Null: giá trị intentially không có giá trị nào.
+    Symbol: là một kiểu dữ liệu mới trong ECMAScript 6, dùng để tạo các giá trị duy nhất và không thể trùng lặp.
+
+    - Để tạo một biến, sử dụng từ khóa "var" hoặc "let" hoặc "const".
+    		Different:
+        var: be used throughout your whole program
+        let: be used within the scope of what you declared
+        const: a variable never change
+	- null : type object # underfined : type underfined
+
+- Method (phương thức) -> .method(...)
+  Properties (thuộc tính) -> .properites = ...
+
+- Function :
+    Declaration function : được định nghĩa bằng từ khóa function và tên của hàm.
+    Expression function : anonymous function (function mà không có tên) được gán cho một biến hoặc truyền như một tham số cho một hàm khác.
+    Arrow function : là một cách tạo một hàm nặc danh bằng cách sử dụng toán tử => thay cho từ khóa function
+
+- String : " "
+- Array : []
+    Tạo mới các phương thức cho Array.prototype.my_name_method
+    Array.hasOwnProperty(index) : ktra index có g.trị hay ko.
+- Object : {key : value, }
+    object.hasOwnProperty() :kiểm tra một đối tượng có chứa một thuộc tính nào đó hay không.
+
+- HTML DOM (Document Object Model) 
+    Là một cấu trúc cây tài liệu dùng để biểu diễn và tương tác với các phần tử HTML.
+    Nó cho phép bạn truy cập và thay đổi các thuộc tính, nội dung và sự kiện của các phần tử HTML.
+
+    + Phân biệt:
+        Element: 
+            Một phần tử trong DOM là một đối tượng biểu diễn một thành phần của tài liệu HTML hoặc XML. 
+            Mỗi phần tử được biểu diễn như một đối tượng với các thuộc tính và phương thức.
+        HTML Collection: 
+            Là một kiểu tương tự như Node List, nhưng chỉ chứa các phần tử Element.
+        Node List: 
+            Là một danh sách các Node trong DOM. 
+            Nó có thể chứa các Node khác nhau như Element, Attribute, Text, vv.
+        Node Attribute: 
+            Là một thuộc tính của một Node trong DOM. 
+            Mỗi thuộc tính được biểu diễn như một đối tượng với tên và giá trị.
+        Node Text: 
+            Là một Node chứa nội dung văn bản của một phần tử trong DOM.
+        Node Element: 
+            Là một Node chứa một phần tử trong DOM. 
+            Nó có thể có các thuộc tính, nội dung văn bản và các phần tử con khác.
+    
+    + DOM Attribute:
+        .setAttribute('tên attribute mún xét', g.trị cần set)
+        .getAttribute('tên attribute mún xét')
+
+    innerHTML: 
+        Trả về nội dung HTML của phần tử, bao gồm cả các phần tử con. 
+        Bạn có thể sử dụng innerHTML để lấy hoặc thiết lập nội dung HTML của phần tử.
+    outerHTML: 
+        Trả về nội dung HTML của phần tử, bao gồm cả phần tử cha của nó. 
+        Bạn có thể sử dụng outerHTML để lấy hoặc thiết lập nội dung HTML của phần tử và phần tử cha của nó.
+
+    + Có hai cách chính để truy cập và thay đổi thuộc tính CSS trong DOM:
+        Sử dụng thuộc tính style 
+        Sử dụng classList
+
+- DOM Events:
+    PreventDefault là một phương thức của đối tượng sự kiện được gọi để ngăn chặn hành động mặc định của trình duyệt.
+    StopPropagation là một phương thức của đối tượng sự kiện được gọi để dừng sự lan truyền của sự kiện.
+
+- DOM events là sự kiện trên các đối tượng trong Document Object Model (DOM)
+  Event listener là một công cụ trong JavaScript cho phép bạn gắn một hàm với một sự kiện nào đó trên một phần tử DOM.
+    element.addEventListener(eventType, functionToCall); 
+        Với : element là phần tử DOM mà bạn muốn gắn sự kiện.
+              eventType là kiểu sự kiện, ví dụ "click", "mouseover", "keydown", ...
+              functionToCall là hàm mà bạn muốn gọi khi sự kiện xảy ra.
+    + DOM events: chỉ sử dụng trong TH đơn giản (chỉ mún lắng nge sự kiện)
+      Event listener: 
+        khi muốn xử lý nhiều viện lúc 1 envent x.ra
+        lắng nghe / hủy bỏ lắng nghe
+
+- JSON
+    + là định dạng dữ liệu (chuỗi)
+    + JSON : Number, Boolean, Null, Array, Object
+    + truy cập vào các trường trong một đối tượng JSON bằng cách sử dụng toán tử . hoặc toán tử []
+  
+- Object constructor 
+    là một function để tạo ra các đối tượng mới có cùng kiểu và chứa cùng các thuộc tính và phương thức. 
+    Tạo một Object constructor bằng cách sử dụng từ khóa function và viết chữ hoa đầu tiên trong tên constructor. 
+    Sử dụng constructor này để tạo ra các đối tượng mới bằng cách sử dụng toán tử new
+
+- Sync, Async 
+    + Sync: các lệnh trong chương trình sẽ được thực hiện từ trên xuống dưới, một lệnh sau khi thực hiện xong mới chuyển sang lệnh tiếp theo.
+    + Async: 
+- Promise 
+    + và Callback là k.niệm sinh ra để xử lý nguyên tắc bất đồng bộ
+    + Callback 
+        => gây ra một chuỗi các hàm callback liên tiếp => callback hell => dễ bị lỗi và khó hiểu
+    + Promise giúp khắc phục tình trạng callback hell
+
+    + Tạo promise:
+        new + contructor Promise -> truyền vào executor function -> nhận đc 2 hàm resolve, reject
+        đối tượng đc tạo -> sử dụng phương thức .then, .catch, .finally
+        .then nhận 1 function thực thi khi promise được resolve
+        .catch nhận 1 function thực thi khi promise được reject
+        .finally thực thi khi Promise đã hoàn tất việc xử lý, bất kể nó có thành công hay thất bại. 
+
+    + Tạo promise mới thì ngay lập tức thực thi executor function, trước cả khi nhận được đối tượng promise
+    + Executor function nhận 2 đối số là 2 hàm : resolve(thành công), reject(thất bại)
+    + Kết quả của Promise sẽ được xử lý trong phương thức .then hoặc .catch
+
+    + có 3 trạng thái cơ bản:
+        Pending  : trạng thái promise chờ 2 phương thức resolve(xử lý thành công) hoặc reject(xử lý thất bại) được thực thi.
+        Fulfiled : trạng thái thành công
+        Rejected : trạng thái thất bại 
+        Nếu cả 2 phương thức đó k được gọi, promise sẽ kẹt ở trong trạng thái pending => gây ra memory leak.
+
+- Promise (chain):
+    + một phương thức có thể gọi nhiều lần -> thực thi theo kiểu chuỗi -> lần lượt từng hàm thực thi
+    + kết quả trả về của chuỗi trc là tham số truyền vào của chuỗi sau
+    + nếu chuỗi trc trả về 1 promise thì sẽ chờ cho tới khi nó thực hiện xong mới chuyển sang func khác (kể cả có các hàm bất đồng bộ.)
+    + nếu chuỗi resolve giữa chừng có promise reject thì chuỗi sẽ kết thúc và chạy xuống .catch
+
+    + Promise.all
+        Khi các hàm ko phù thuộc nhau nhưng cần kết quả của nhau => nên chạy song song => Promise.all
+        khi tất cả các promise trong array thực hiện xong thì mới thực thi then/catch
+        .then/catch trả về 1 mảng 
+        
+- Fetch:
+    + API (URL) : Application programing interface, là cổng giao tiếp giữa các phần mềm
+    + BE sẽ cung cấp các API cho FE, và FE sẽ gọi API để lấy dữ liệu từ BE. 
+    API sẽ trả về dữ liệu dưới dạng định dạng như JSON hoặc XML, và FE sẽ sử dụng dữ liệu này để tạo ra giao diện người dùng.
+        Backend -> API -> Fetch -> JSON/XML 
+        -> JSON.parse -> Javascript types -> render ra gia diện với HTML
+
+    + Là một API JavaScript dùng để tải dữ liệu từ một URL.
+    + Sử dụng fetch để gửi yêu cầu HTTP và nhận phản hồi từ máy chủ. 
+    + fetch() trả về một Promise với kết quả là một Response object, chính cái phản hồi cũng là Promise
+    + .json() hoặc .text() để truy xuất dữ liệu từ Response object, trả về Promise.
+
+    + JOSN server: API server (fake) / Mock API -> lấy dữ liệu web, thêm, sửa, xóa, làm việc tương tác với api
+    + 4 hành động tương tác với dữ liệu: CRUD
+        Create: Tạo mới -> POST
+        Read: Lấy dữ liệu -> GET
+        Update: Cập nhật, chỉnh sửa -> PUT/PATCH
+        Delete: Xóa -> DELETE
+    + Postman: 
+        công cụ cho phép bạn gửi các yêu cầu HTTP và xem kết quả trả về.
+        giúp ktra các API của mình và thử nghiệm các tính năng mới trước khi đưa vào sử dụng trong môi trường thực tế. 
+        để gửi các yêu cầu GET, POST, PUT, DELETE và nhiều hơn nữa, và xem kết quả trả về dưới dạng JSON hoặc XML. 
+
+    + REST (Representational State Transfer) 
+        là một kiến trúc cho các API (Application Programming Interface).
+        cung cấp cách các client giao tiếp với máy chủ qua các yêu cầu HTTP, và máy chủ trả về các câu trả lời tương ứng dựa trên yêu cầu đó.
+        cung cấp một số tiêu chuẩn cho việc thiết kế API, bao gồm việc sử dụng các phương thức HTTP chuẩn 
+
+- ES6 (Javascript ECMAScript 6)
+    + Tạo ra tiêu chuẩn của JS
+
+    * Var / Let, const : Scope (phạm vi truy cập), Hosting
+      Const / Var, Let : Assignment (việc gán lại g.trị)
+     Code block: if else, loop, ... -> {}
+     Hosting : khi một biến được khai báo, nó có thể được sử dụng trước khi được khai báo.
+                (var hỗ trợ hosting)
+        * const của object thì các thuộc thính bên trong có thể gán lại đc.
+
+    + Template string nội suy: ` `
+
+    + Enhanced object literals
+        Đ/nghĩa key: value cho object ngắn hơn
+        Đ/nghĩa method cho object
+        Đ/nghĩa key cho object dưới dạng biến
+
+    + Destructuring (phân rã), Rest
+        Destructuring: giúp truy xuất và lấy gtrị từ mảng/đối tượng một cách dễ dàng và tiện lợi
+
+    + Spread (...):
+        trải array/object ra thành một danh sách các giá trị hoặc thuộc tính.
+        Khi `...` đứng trước array/object thì giống như bỏ đi dấu ngoặc
+
+    + Tagged template literals
+        Tạo ra chuỗi (string) động bằng cách kết hợp các giá trị biến và hàm.
+        
+- BEM
+    + Cú pháp: 
+        .block
+        .block__element
+        .block--modifier
+        .block__element--modifier
+        

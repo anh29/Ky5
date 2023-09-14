@@ -1,0 +1,28 @@
+- HTTP (Hypertext Transfer Protocol) protocol (giao thức HTTP)
+  + Là cách thức mà website truyền tải qua internet
+  + Khi gõ tên web -> enter thì sẽ gửi yêu cầu lên máy chủ ở data center
+      -> dựa vào url trả về mã html 
+      -> server đọc yêu cầu rồi render lại 
+
+  + General:
+      Request URL: link ta gửi lên trình máy chủ
+      Request Method: phương thức
+      Status Code: thành công/thất bại
+      Remote Address: địa chỉ máy chủ đang được đặt
+  + Response Headers: Sau khi máy chủ trả về dữ liệu thì mới có response
+  + Request Headers: Thông tin của yêu cầu gửi đi, dưới dạng key-value
+
+  + Request Methods:
+      GET: 
+        Yêu cầu lấy dữ liệu từ một URL nhất định. 
+        Đây là phương thức yêu cầu mặc định trong Postman và là phương thức yêu cầu phổ biến nhất.
+      POST: 
+        Yêu cầu gửi dữ liệu mới đến một URL nhất định. 
+        Đây là phương thức yêu cầu thường được sử dụng để tạo mới một đối tượng hoặc tài nguyên.
+      PUT: 
+        Yêu cầu cập nhật dữ liệu hiện có của một URL nhất định. 
+        Đây là phương thức yêu cầu thường được sử dụng để cập nhật một đối tượng hoặc tài nguyên đã tồn tại.
+      DELETE: 
+        Yêu cầu xóa một đối tượng hoặc tài nguyên tại một URL nhất định.
+      PATCH: 
+        Yêu cầu cập nhật một phần của dữ liệu hiện có của một URL nhất định
