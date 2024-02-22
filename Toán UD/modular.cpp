@@ -200,9 +200,9 @@ int main()
 
 	printf("\nInput number of equations (n): "); scanf("%d", &q);
 	int x[q], y[q];
-	printf("\nInput a_n, m_n: ");
 	for (int i=0 ; i<q ; i++)
 	{
+	printf("\nInput a_n, m_n: ");
 		scanf("%d %d", &x[i], &y[i]);
 	}
 	

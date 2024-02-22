@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form login</title>
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/form.css">
+    <style>
+        .error-message {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <p class="title">Login</p>
+        <form name="f1" action="#" method="post" class="form" onsubmit="return validateForm()">
+            <table>
+                <tr>
+                    <th class="text">Username</th>
+                    <td>
+                        <input type="text" name="user" onblur="CheckName()" />
+                        <span id="name-error" class="error-message"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="text">Password</th>
+                    <td>
+                        <input type="password" name="password" onblur="CheckPass()" />
+                        <span id="pass-error" class="error-message"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td style="text-align: center;">
+                        <button class="btn" type="submit">OK</button>
+                        <button class="btn" type="button" onclick="resetForm()">Reset</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <script>
+        function CheckName() {
+            var name = document.f1.user.value;
+            var nameError = document.getElementById("name-error");
+
+            if (!name) {
+                nameError.textContent = "Please enter username";
+            } else {
+                nameError.textContent = "";
+            }
+        }
+
+        function CheckPass() {
+            var password = document.f1.password.value;
+            var passError = document.getElementById("pass-error");
+
+            if (!password || password.length < 6) {
+                passError.textContent = "Please enter password more than 6 characters";
+            } else {
+                passError.textContent = "";
+            }
+        }
+
+        function validateForm() {
+            // Kiểm tra lỗi trước khi submit
+            var name = document.f1.user.value;
+            var password = document.f1.password.value;
+            var nameError = document.getElementById("name-error");
+            var passError = document.getElementById("pass-error");
+
+            if (!name) {
+                nameError.textContent = "Please enter username";
+                return false; // Ngăn chặn việc submit
+            }
+
+            if (!password || password.length < 6) {
+                passError.textContent = "Please enter password more than 6 characters";
+                return false; // Ngăn chặn việc submit
+            }
+
+            // Load lại trang sau khi submit thành công
+            location.reload();
+
+            return false; // Ngăn chặn việc submit
+        }
+
+        function resetForm() {
+            // Xóa thông báo lỗi khi nhấn nút Reset
+            var nameError = document.getElementById("name-error");
+            var passError = document.getElementById("pass-error");
+            nameError.textContent = "";
+            passError.textContent = ""; document.f1.user.value = ""; document.f1.password.value = "";
+        }
+    </script>
+</body>
+
+</html>

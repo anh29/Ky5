@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert Text</title>
+    <script>
+        function convertText() {
+            var text1 = document.getElementById("text1").value;
+            var text2 = randomizeCase(text1); // Chuyển đổi chữ hoa/thường
+            document.getElementById("text2").value = text2;
+        }
+
+        function randomizeCase(inputString) {
+            return inputString.split('').map(function (char) {
+                // Ngẫu nhiên chọn giữa việc chuyển thành chữ hoa hoặc chữ thường
+                return Math.random() < 0.5 ? char.toUpperCase() : char.toLowerCase();
+            }).join('');
+        }
+
+        window.onload = function () {
+            document.getElementById("text1").focus();
+        }
+    </script>
+</head>
+
+<body>
+    <form name="form33">
+        <label for="text1">Text 1:</label>
+        <input type="text" id="text1" name="text1" onblur="convertText()" />
+
+        <label for="text2">Text 2:</label>
+        <input type="text" id="text2" name="text2" />
+    </form>
+</body>
+
+</html>

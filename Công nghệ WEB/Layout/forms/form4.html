@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change color</title>
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <style>
+        .content {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <form name="f1" method="" action="" class="content">
+        <input type="text" name="t1" value="" />
+        <input type="button" name="t2" value="OK" onclick="changeColor()" />
+    </form>
+
+    <script language="JavaScript">
+        function changeColor() {
+            var st = document.f1.t1.value;
+            // var forms = document.getElementsByTagName("form");
+
+            // var form = forms[0];
+
+            // form.style.backgroundColor = st;
+
+            document.bgColor = st;
+        }
+    </script>
+</body>
+
+</html>

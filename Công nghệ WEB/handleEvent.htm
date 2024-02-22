@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script language="Javascript">
+        function chuHoa() {
+            var text = document.f1.t1.value;
+            document.f1.t1.value = text.toUpperCase();
+        }
+        function selectID() {
+            var st = document.f2.s1.value;
+            document.f2.s1.selectIndex = st
+        }
+    </script>
+</head>
+
+<body onLoad=document.f1.t1.focus()>
+    <form name="f1">
+        <input type=text name="t1" value="" onBlur="chuHoa()" />
+    </form>
+
+    <div style="height: 20px;"></div>
+
+    <form name="f2">
+        <select name="s1">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+        </select>
+        <input type="text" name="t2" value="">
+        <input type=button value="OK" onclick="selectID()">
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+.content {
+  text-align: center;
+  background-color: aliceblue;
+  padding: 40px 0;
+  margin: 50px 142px;
+}
+
+.title {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.input {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 71px;
+}
+
+.form {
+  text-align: -webkit-center;
+}
+
+tr {
+  height: 40px;
+}
+
+textarea {
+  width: -webkit-fill-available;
+}

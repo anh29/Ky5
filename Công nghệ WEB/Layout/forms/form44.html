@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Box Example</title>
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/form.css">
+</head>
+
+<body>
+    <form name="form44" class="form content">
+        <table>
+            <tr>
+                <th><label for="selectBox">Select an option:</label></th>
+                <td><select id="selectBox">
+                        <option value="Index0">Index 0</option>
+                        <option value="Index1">Index 1</option>
+                        <option value="Index2">Index 2</option>
+                        <option value="Index3">Index 3</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <th><label for="numberInput">Enter a number:</label></th>
+                <td><input type="text" id="numberInput" /></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td><button type="button" onclick="selectOption()">Select Option</button></td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        function selectOption() {
+            var numberInput = document.getElementById("numberInput").value;
+            var selectBox = document.getElementById("selectBox");
+
+            // Chuyển đổi số nhập vào thành số nguyên
+            var index = parseInt(numberInput);
+
+            // Kiểm tra xem index có hợp lệ không
+            if (!isNaN(index) && index >= 0 && index <= 3) {
+                selectBox.selectedIndex = index;
+            } else {
+                alert("Vui lòng nhập một số từ 0 đến 3.");
+            }
+        }
+    </script>
+</body>
+
+</html>

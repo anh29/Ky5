@@ -1,0 +1,135 @@
+ACL 4:
+Router Gateway
+
+enable
+configure terminal
+ip access-list extended GATEWAY
+deny icmp any any echo
+deny tcp any any
+permit tcp any any established
+permit ip any any
+exit
+interface f0/0
+ip access-group GATEWAY in
+exit
+exit
+write memory
+
+enable: Lệnh này dùng để chuyển từ chế độ thường (User EXEC Mode) sang chế độ đặc quyền (Privileged EXEC Mode), còn được gọi là "chế độ enable" để thực hiện các lệnh cấu hình.
+
+configure terminal: Lệnh này được sử dụng để chuyển sang chế độ cấu hình (Global Configuration Mode), nơi bạn có thể cấu hình các thiết lập hệ thống toàn cầu.
+
+ip access-list extended GATEWAY: Tạo một danh sách kiểm soát truy cập mở rộng (extended ACL) có tên là "GATEWAY". Extended ACL cho phép bạn kiểm soát truy cập dựa trên nhiều tiêu chí như địa chỉ IP nguồn/đích, cổng, và nhiều loại gói tin khác.
+
+deny icmp any any echo: Điều này là lệnh để từ chối tất cả các gói ICMP (Internet Control Message Protocol) loại "echo" (ping) từ bất kỳ nguồn và đích nào.
+
+deny tcp any any: Điều này từ chối tất cả các gói tin TCP từ bất kỳ nguồn và đích nào.
+
+permit tcp any any established: Điều này cho phép tất cả các gói tin TCP đã thiết lập trước đó (gói tin đã thiết lập kết nối) từ bất kỳ nguồn và đích nào.
+
+permit ip any any: Điều này cho phép tất cả các gói tin IP từ bất kỳ nguồn và đích nào.
+
+exit: Lệnh này dùng để thoát khỏi chế độ cấu hình và trở lại chế độ trước đó.
+
+interface f0/0: Lệnh này chuyển sang cấu hình giao diện Ethernet 0/0 (f0/0).
+
+ip access-group GATEWAY in: Áp dụng danh sách kiểm soát truy cập "GATEWAY" cho giao diện f0/0. Điều này đồng nghĩa với việc các gói tin vào giao diện f0/0 sẽ được kiểm tra theo các quy tắc đã được định nghĩa trong danh sách kiểm soát truy cập "GATEWAY".
+
+exit: Thoát khỏi cấu hình giao diện.
+
+exit: Thoát khỏi chế độ cấu hình toàn cục.
+
+write memory: Lệnh này lưu trữ cấu hình vào bộ nhớ cố định của thiết bị, giúp bạn không mất cấu hình khi khởi động lại thiết bị.
+
+
+
+
+
+
+ACL 5:
+Router West
+
+
+enable
+configure terminal
+access-list 111 permit ip 10.10.1.0 0.0.0.255 10.10.4.0 0.0.0.255
+access-list 111 deny ip 10.10.1.0 0.0.0.255 10.10.0.0 0.0.255.255 
+access-list 111 permit tcp 10.10.1.0 0.0.0.255 any eq 80
+access-list 111 deny ip 10.10.1.0 0.0.0.255 any
+access-list 111 permit ip any any
+interface f0/0
+ip access-group 111 in
+exit
+exit
+write memory
+
+
+
+enable: Lệnh này chuyển thiết bị từ chế độ thường (User EXEC Mode) sang chế độ đặc quyền (Privileged EXEC Mode) để có quyền thực hiện các lệnh cấu hình.
+
+configure terminal: Lệnh này dùng để chuyển sang chế độ cấu hình (Global Configuration Mode), nơi bạn có thể cấu hình các thiết lập hệ thống toàn cầu.
+
+Các lệnh access-list: Đây là các lệnh để tạo và cấu hình danh sách kiểm soát truy cập có tên là "111". Lần lượt, các lệnh này thực hiện các hành động sau:
+
+access-list 111 permit ip 10.10.1.0 0.0.0.255 10.10.4.0 0.0.0.255: Cho phép tất cả các gói tin IP từ mạng con 10.10.1.0/24 đến mạng con 10.10.4.0/24.
+
+access-list 111 deny ip 10.10.1.0 0.0.0.255 10.10.0.0 0.0.255.255: Từ chối tất cả các gói tin IP từ mạng con 10.10.1.0/24 đến bất kỳ mạng con nào trong phạm vi 10.10.0.0/16.
+
+access-list 111 permit tcp 10.10.1.0 0.0.0.255 any eq 80: Cho phép tất cả các kết nối TCP từ mạng con 10.10.1.0/24 đến bất kỳ đích nào trên cổng 80 (HTTP).
+
+access-list 111 deny ip 10.10.1.0 0.0.0.255 any: Từ chối tất cả các gói tin IP từ mạng con 10.10.1.0/24 đến bất kỳ đích nào.
+
+access-list 111 permit ip any any: Cho phép tất cả các gói tin IP từ bất kỳ nguồn và đích nào.
+
+interface f0/0: Lệnh này chuyển sang cấu hình giao diện Ethernet 0/0 (f0/0).
+
+ip access-group 111 in: Áp dụng danh sách kiểm soát truy cập "111" cho giao diện f0/0. Điều này đồng nghĩa với việc các gói tin vào giao diện f0/0 sẽ được kiểm tra theo các quy tắc đã được định nghĩa trong danh sách kiểm soát truy cập "111".
+
+exit: Thoát khỏi cấu hình giao diện.
+
+exit: Thoát khỏi chế độ cấu hình toàn cục.
+
+write memory: Lệnh này lưu trữ cấu hình vào bộ nhớ cố định của thiết bị để đảm bảo rằng cấu hình được duy trì sau khi khởi động lại thiết bị.
+
+Tóm lại, đoạn mã trên thiết lập một danh sách kiểm soát truy cập (ACL) có tên "111" để kiểm soát truy cập vào giao diện mạng Ethernet 0/0. ACL này cho phép các gói tin IP từ mạng con 10.10.1.0/24 đến mạng con 10.10.4.0/24, cho phép kết nối TCP trên cổng 80 từ mạng con này đến bất kỳ đích nào, và từ chối các gói tin khác từ mạng con 10.10.1.0/24 đến bất kỳ đích nào. Cuối cùng, nó cho phép tất cả các gói tin IP từ bất kỳ nguồn và đích nào.
+
+
+
+
+
+ACL 6:
+
+
+Router West
+
+enable
+configure terminal
+access-list 111 permit tcp 10.10.2.0 0.0.0.255 10.10.3.0 0.0.0.255 eq 21
+access-list 111 permit tcp 10.10.3.0 0.0.0.255 10.10.2.0 0.0.0.255 eq 21
+​access-list 111 deny ip 10.10.2.0 0.0.0.255 10.10.3.0 0.0.0.255​
+access-list 111 permit ip any any
+interface f0/1
+ip access-group 111 in
+exit
+exit
+write memory
+
+
+access-list 111 permit tcp 10.10.2.0 0.0.0.255 10.10.3.0 0.0.0.255 eq 21: Lệnh này cho phép kết nối FTP (port 21) từ mạng con 10.10.2.0/24 đến mạng con 10.10.3.0/24.
+
+access-list 111 permit tcp 10.10.3.0 0.0.0.255 10.10.2.0 0.0.0.255 eq 21: Lệnh này cho phép kết nối FTP (port 21) từ mạng con 10.10.3.0/24 đến mạng con 10.10.2.0/24. Điều này cho phép giao tiếp FTP hai chiều giữa hai mạng con.
+
+access-list 111 deny ip 10.10.2.0 0.0.0.255 10.10.3.0 0.0.0.255: Lệnh này từ chối tất cả các gói tin IP từ mạng con 10.10.2.0/24 đến mạng con 10.10.3.0/24. Tuy nhiên, do lệnh này đặt sau các lệnh permit, nên các lệnh permit sẽ vượt quyền ưu tiên của nó. Điều này có nghĩa rằng các kết nối FTP vẫn sẽ được phép.
+
+access-list 111 permit ip any any: Lệnh này cho phép tất cả các gói tin IP từ bất kỳ nguồn và đích nào, và nó đặt ở cuối danh sách kiểm soát truy cập để đảm bảo rằng các gói tin không được liệt kê trong danh sách kiểm soát truy cập sẽ được phép đi qua.
+
+interface f0/1: Lệnh này chuyển sang cấu hình giao diện Ethernet 0/1 (f0/1).
+
+ip access-group 111 in: Lệnh này áp dụng danh sách kiểm soát truy cập "111" cho giao diện f0/1, đồng nghĩa với việc các gói tin vào giao diện f0/1 sẽ được kiểm tra theo các quy tắc đã được định nghĩa trong danh sách kiểm soát truy cập "111".
+
+exit: Thoát khỏi cấu hình giao diện.
+
+exit: Thoát khỏi chế độ cấu hình toàn cục.
+
+write memory: Lệnh này lưu trữ cấu hình vào bộ nhớ cố định của router để đảm bảo rằng cấu hình được duy trì sau khi khởi động lại thiết bị.
+

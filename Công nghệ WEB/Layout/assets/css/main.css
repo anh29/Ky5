@@ -1,0 +1,33 @@
+.i1 {
+  height: 80px;
+  width: 100%;
+}
+
+.content {
+  width: 100%;
+  height: 565px;
+}
+
+.i2 {
+  width: 14%;
+  height: 100%;
+}
+
+.i3 {
+  width: 78%;
+  height: 100%;
+}
+
+.i4 {
+  width: 8%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+}
+.i5 {
+  width: 100%;
+  height: 80px;
+  background-color: #acacfa;
+  position: absolute;
+  bottom: 0px;
+}

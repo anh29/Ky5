@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="Bai1_Server/src"/>
+	<classpathentry kind="src" path="Demo/src"/>
+	<classpathentry kind="lib" path="Bai1_Server/lib/CopyLibs/org-netbeans-modules-java-j2seproject-copylibstask.jar"/>
+	<classpathentry kind="lib" path="Bai1_Server/lib/mysql-connector-java.jar"/>
+	<classpathentry kind="lib" path="Demo/lib/CopyLibs/org-netbeans-modules-java-j2seproject-copylibstask.jar"/>
+	<classpathentry kind="lib" path="Demo/lib/mysql-connector-java.jar"/>
+	<classpathentry kind="output" path="Bai1_Server/build/classes"/>
+</classpath>

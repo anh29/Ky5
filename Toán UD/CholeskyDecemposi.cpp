@@ -153,7 +153,6 @@ int main() {
 		printf("Matrix can not be positive definite (not symmetric).");
 	} else
 	{
-		Cholesky_LLt(matrix, n);
 		Cholesky_LDLt(matrix, n);
 	}
  
